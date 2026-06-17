@@ -1,4 +1,4 @@
-package com.pluralsight.sneakerdropsapi.models;
+package com.pluralsight.sneakerdrops.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,9 +7,11 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Brand {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     public Brand() {
@@ -34,10 +36,4 @@ public class Brand {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Override
-    public String toString() {
-        return id + ": " + name;
-    }
 }
-

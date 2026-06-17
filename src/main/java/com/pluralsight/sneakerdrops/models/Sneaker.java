@@ -1,4 +1,4 @@
-package com.pluralsight.sneakerdropsapi.models;
+package com.pluralsight.sneakerdrops.models;
 
 import jakarta.persistence.*;
 
@@ -7,10 +7,12 @@ public class Sneaker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+
     private String model;
     private double price;
     private int releaseYear;
+
     @ManyToOne(optional = false)
     private Brand brand;
 
@@ -62,10 +64,5 @@ public class Sneaker {
 
     public void setBrand(Brand brand) {
         this.brand = brand;
-    }
-
-    @Override
-    public String toString() {
-        return model + " " + price + " " + releaseYear + " " + brand.getName();
     }
 }
